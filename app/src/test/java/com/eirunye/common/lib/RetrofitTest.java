@@ -5,6 +5,7 @@ import android.util.ArrayMap;
 import com.eirunye.common.lib.service.GithubService;
 import com.google.gson.GsonBuilder;
 
+import java.util.HashMap;
 import java.util.List;
 
 import io.reactivex.android.plugins.RxAndroidPlugins;
@@ -22,6 +23,7 @@ import retrofit2.Retrofit;
 public class RetrofitTest {
 
     ArrayMap<Integer, String> arrayMap = new ArrayMap();
+    HashMap
 
     public void test() {
 

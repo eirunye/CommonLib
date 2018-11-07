@@ -1,5 +1,6 @@
 package com.eirunye.common.lib;
 
+import android.content.Context;
 import android.graphics.Bitmap;
 import android.util.Log;
 
@@ -11,6 +12,8 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
+
+import javax.xml.transform.Source;
 
 import io.reactivex.Observable;
 import io.reactivex.ObservableEmitter;
@@ -35,7 +38,7 @@ public class ActivityTest {
 
     private static final String TAG = "ActivityTest";
 
-
+Context
     public static void main(String[] args) {
 
         Observable.interval(1, TimeUnit.SECONDS).takeUntil(new Predicate<Long>() {
@@ -184,12 +187,48 @@ public class ActivityTest {
     }
 
 
-    public void test4(){
+    @Test
+    public void test4() {
 
 
+        int a[] = {12, 34, 1, 67, 24, 9, 18};
+        quickSort(a, 0, 6);
+
+        for (int ii = 0; ii < a.length; ii++) {
+            System.out.println(a[ii]);
+        }
+
+    }
 
 
+    public void quickSort(int[] a, int start, int end) {
+        if (start < end) {
+            int baseNum = a[start];//选基准值
+            int i = start;
+            int j = end;
+            do {
+                while ((a[i] < baseNum) && i < end) { //如果索引值小于基准值
+                    i++;
+                }
+                while ((a[j] > baseNum) && j > start) {//从后边往前面推，如果索引值大于于基准值
+                    j--;
+                }
+                if (i <= j) {
+                    int midNum = a[i];
+                    a[i] = a[j];
+                    a[j] = midNum;
+                    i++;
+                    j--;
+                }
+            } while (i <= j);
+            if (start < j) {
+                quickSort(a, start, j);
+            }
+            if (end > i) {
+                quickSort(a, i, end);
+            }
 
+        }
     }
 
 }

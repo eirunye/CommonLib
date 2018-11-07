@@ -38,7 +38,7 @@ public class ActivityTest {
 
     private static final String TAG = "ActivityTest";
 
-Context
+
     public static void main(String[] args) {
 
         Observable.interval(1, TimeUnit.SECONDS).takeUntil(new Predicate<Long>() {
